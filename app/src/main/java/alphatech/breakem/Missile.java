@@ -8,14 +8,14 @@ import java.util.Random;
 /**
  * Created by Jonathan on 1/3/2016.
  */
-public class Missle extends GameObject{
+public class Missile extends GameObject{
     private int score;
     private int speed;
     private Random rand = new Random();
     private Animation animation = new Animation();
     private Bitmap spritesheet;
 
-    public Missle(Bitmap res, int x, int y, int w, int h, int s, int numFrames){
+    public Missile(Bitmap res, int x, int y, int w, int h, int s, int numFrames){
         this.x = x;
         this.y = y;
         width = w;
