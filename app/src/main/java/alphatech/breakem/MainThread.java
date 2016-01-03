@@ -28,7 +28,6 @@ public class MainThread extends Thread{
         long totalTime = 0;
         int frameCount = 0;
         long targetTime = 1000/fps;
-
         while(running){
             startTime = System.nanoTime();
             canvas = null;
@@ -68,7 +67,6 @@ public class MainThread extends Thread{
             }
         }
     }
-
     public void setRunning(boolean b){
         running = b;
     }

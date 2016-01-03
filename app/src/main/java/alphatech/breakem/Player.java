@@ -10,7 +10,6 @@ import android.graphics.Canvas;
 public class Player extends GameObject{
     private Bitmap spritesheet;
     private int score;
-    private double dya;
     private boolean up;
     private boolean playing;
     private Animation animation = new Animation();
@@ -48,9 +47,9 @@ public class Player extends GameObject{
         animation.update();
 
         if(up){
-            dy = (int)(dya -= 1.1);
+            dy -= 1;
         }else{
-            dy = (int)(dya += 1.1);
+            dy += 1;
         }
 
         if(dy > 15) {
@@ -59,6 +58,8 @@ public class Player extends GameObject{
         if(dy < -15){
             dy = -15;
         }
+
+        y += dy*2;
     }
     public void draw(Canvas canvas){
         canvas.drawBitmap(animation.getImage(),x,y,null);
@@ -72,8 +73,8 @@ public class Player extends GameObject{
     public void setPlaying(boolean b){
         playing = b;
     }
-    public void resetDYA(){
-        dya = 0;
+    public void resetDY(){
+        dy = 0;
     }
     public void resetScore(){
         score = 0;
