@@ -1,6 +1,7 @@
 package alphatech.breakem;
 
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 
 /**
  * Created by Jonathan on 1/2/2016.
@@ -18,7 +19,7 @@ public class Background {
 
     }
 
-    public void draw(){
+    public void draw(Canvas canvas){
 
     }
 }

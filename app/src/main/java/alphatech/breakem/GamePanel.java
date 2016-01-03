@@ -1,6 +1,9 @@
 package alphatech.breakem;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -12,6 +15,7 @@ import android.view.SurfaceView;
 
 public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
     private MainThread thread;
+    private Background bg;
 
     public GamePanel(Context context){
         super(context);
@@ -45,6 +49,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
 
     @Override
     public void surfaceCreated(SurfaceHolder holder){
+        bg = new Background(BitmapFactory.decodeResource(getResources(),R.drawable.grassbg1));
         thread.setRunning(true);
         thread.start();
     }
@@ -55,6 +60,12 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
     }
 
     public void update(){
-
+        bg.update();
     }
+
+    @Override
+    public void draw(Canvas canvas){
+        bg.draw();
+    }
+
 }
