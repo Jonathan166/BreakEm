@@ -27,7 +27,7 @@ public class MainThread extends Thread{
         long waitTime = 0;
         long totalTime = 0;
         int frameCount = 0;
-        long targetTime = 1000/fps;
+        long targetTime = 500/fps;
 
         while(running){
             startTime = System.nanoTime();
